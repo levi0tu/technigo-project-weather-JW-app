@@ -19,6 +19,6 @@ fetch("https://api.openweathermap.org/data/2.5/weather?q=Kungsbacka,SE&appid=266
         sunrise.textContent = sunriseTime.toUTCString().slice(17, 22);
         sunset.textContent = sunsetTime.toUTCString().slice(17, 22);
 
-        //rundar av temperaturen och lägger till gradtecken
-        temp.textContent = Math.round(data.main.temp) + "°C";
+        //rundar av temperaturen till en decimal och lägger till gradtecken
+        temp.textContent = Math.round(data.main.temp * 10) / 10 + "°C";
     });
