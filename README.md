@@ -1,10 +1,10 @@
 # Weather app
 
-Replace this readme with your own information about the project. You can include things like:
-
-- Brief description of the assignment
-- How you approached the task, what tools and techniques you used, and how you planned it
-- If you had more time, what would be next?
+Goals
+You should fetch data from the API using fetch() in JavaScript
+The app should have: city name, current temperature, weather description, sunrise/sunset time, 4-day forecast
+The presentation of the data should be in the specified format
+Make the page fully responsive so that it works well on mobile as well as tablet and desktop (make it look good on devices from 320px width up to 1600px)
 
 ## View it live
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+[Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.](https://weatherappjw.netlify.app/)

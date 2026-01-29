@@ -14,8 +14,15 @@ Promise.all([
     .then(([currentData, forecastData]) => {
         console.log(currentData);
         console.log(forecastData);
-        city.textContent = (currentData.name);
-        weatherElement.textContent = (currentData.weather[0].description);
+
+        //skriver city fler gånger
+        document.querySelectorAll(".city").forEach(el => {
+            el.textContent = currentData.name;
+        });
+        //Gör första bokstaven i varje ord med stor bokstav
+        const toTitleCase = (text) =>
+            text.split(" ").map(word => word[0].toUpperCase() + word.slice(1)).join(" ");
+        weatherElement.textContent = toTitleCase(currentData.weather[0].description);
 
         //sunrise och sunset behöver konverteras till tid enligt api
         const sunriseTime = new Date(currentData.sys.sunrise * 1000);
@@ -32,10 +39,11 @@ Promise.all([
 
         const forecastHTML = dailyForecasts.map(day => {
             const date = new Date(day.dt * 1000);
-            const dayName = date.toLocaleDateString('sv-SE', { weekday: 'short' });
+            const dayName = date.toLocaleDateString("sv-SE", { weekday: "short" });
             const temp = Math.round(day.main.temp);
-            return `<div>${dayName}: ${temp}° </div > `;
-        }).join('');
+            //toTitleCase för att ändra till stor bokstav
+            return `<div>${toTitleCase(dayName)}: ${temp}° </div > `;
+        }).join("");
         forecast.innerHTML = forecastHTML;
 
     });
