@@ -13,6 +13,14 @@ body {
   padding: 2rem;
 }
 
+body.warm .card {
+  background: #f0d5aa;
+}
+
+body.cold .card {
+  background: #d4f0ff;
+}
+
 .city {
   font-weight: bold;
 

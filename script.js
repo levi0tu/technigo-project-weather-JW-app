@@ -13,6 +13,9 @@ Promise.all([
 
     .then(([currentData, forecastData]) => {
         console.log(currentData);
+        const isWarm = currentData.main.temp >= 16;
+        document.body.classList.toggle("warm", isWarm);
+        document.body.classList.toggle("cold", !isWarm);
         console.log(forecastData);
 
         //skriver city fler gånger
